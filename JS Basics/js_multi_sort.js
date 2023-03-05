@@ -1,3 +1,8 @@
+/**
+ * You can do multi sort here like
+ * first sort by fee and then by id and then keep going on
+ */
+
 let boredApeCollection = [
   {
     collectionName: 'Bored Ape',
@@ -40,6 +45,9 @@ let boredApeCollection = [
     fee: 30,
   },
 ]
+
+//[TIP] Array.sort() does not consider negative numers,
+// use array.sort((a, b) => a -b) if array has negative numbers
 
 const sortedListByFeeAndId = boredApeCollection.sort(
   (a, b) => a.fee - b.fee || a.id.localeCompare(b.id)
