@@ -37,5 +37,6 @@ def longest_common_prefix(strs):
 print(longest_common_prefix(["flower", "flow", "flight"]))
 
 l = list(zip(*["flower", "flow", "flight"]))
+print(l)
 for i in l:
     print(set(i))

@@ -40,6 +40,7 @@ def merge(num1, num2, m, n):
             idx2 -= 1
 
         main_idx -= 1
+    return num1
 
 
-merge([1, 2, 3, 0, 0, 0], [2, 5, 6], 3, 3)
+print(merge([1, 2, 3, 0, 0, 0], [2, 5, 6], 3, 3))

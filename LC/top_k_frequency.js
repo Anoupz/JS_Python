@@ -10,11 +10,7 @@ function topKFrequent(nums, k) {
   const bucket = []
   const result = []
   for (let n of nums) {
-    if (count_dict.has(n)) {
-      count_dict.set(n, count_dict.get(n) + 1)
-    } else {
-      count_dict.set(n, 1)
-    }
+    count_dict.set(n, (count_dict.get(n) || 0) + 1)
   }
 
   /**
@@ -38,9 +34,11 @@ function topKFrequent(nums, k) {
      * Use case nums = [1, 2] and k =2, There is no 2 times occurance of an element, but do we return
      */
     if (result.length === k) {
-      return result
+      break
     }
   }
 
   return result
 }
+
+console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2))

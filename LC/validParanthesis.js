@@ -3,7 +3,7 @@ const bracket_dict = new Map([
   ['{', '}'],
   ['[', ']'],
 ])
-function isValid(s: string): boolean {
+function isValid(s) {
   let stack = []
   for (let c of s) {
     if (bracket_dict.has(c)) {
