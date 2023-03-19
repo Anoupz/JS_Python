@@ -18,11 +18,7 @@ function topKFrequent(nums, k) {
    */
 
   for (let [num, freq] of count_dict) {
-    if (!bucket[freq]) {
-      bucket[freq] = new Set().add(num)
-    } else {
-      bucket[freq] = bucket[freq].add(num)
-    }
+    bucket[freq] = (bucket[freq] ?? new Set()).add(num)
   }
 
   for (let i = bucket.length - 1; i >= 0; i--) {

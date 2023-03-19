@@ -5,23 +5,25 @@
 
 function longestConsecutive(nums) {
   let seq = new Set(nums)
-  let result = 0
+  let maxSeq = 0
 
   for (let value of nums) {
+    // check if the value is start of the sequence
     if (seq.has(value - 1)) {
       continue
     }
 
+    // if its start of the seq, then check how far this goes
     let count = 1
     while (seq.has(value + 1)) {
       count++
       value++
     }
 
-    result = Math.max(count, result)
+    maxSeq = Math.max(count, maxSeq)
   }
 
-  return result
+  return maxSeq
 }
 
 console.log(longestConsecutive([100, 4, 200, 1, 3, 2]))

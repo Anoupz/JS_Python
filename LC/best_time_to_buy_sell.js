@@ -15,3 +15,4 @@ function max_profit(prices) {
 }
 
 console.log(max_profit([7, 1, 5, 3, 6, 4]))
+console.log(max_profit([5, -3, 4, 8, 6, -7, 2]))
