@@ -25,7 +25,8 @@ function findDuplicate(nums) {
     }
   }
 
-  // have another loop to check if two slow pointer meet at the same place
+  // have another loop to check if two slow 
+  // pointer meet at the same place
   // This is called floyd's algorithm
   while (true) {
     slow = nums[slow]
@@ -37,4 +38,4 @@ function findDuplicate(nums) {
   }
 }
 
-console.log(findDuplicate([1, 3, 4, 2, 2]))
+console.log(findDuplicate([1, 2, 3, 4, 7, 7, 7]))

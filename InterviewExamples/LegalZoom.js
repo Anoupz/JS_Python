@@ -48,6 +48,34 @@ function findMaxProfitEndMonth(monthlyProfits, startMonth) {
   return endMonth
 }
 
+function maxProfitRange2(monthlyProfits) {
+  let maxProfit = 0
+  let maxRangeStart = 0
+  let maxRangeEnd = -1
+  let currentProfit = 0
+  let currentRangeStart = 0
+
+  for (let i = 0; i < monthlyProfits.length; i++) {
+    currentProfit += monthlyProfits[i]
+
+    if (currentProfit > maxProfit) {
+      maxProfit = currentProfit
+      maxRangeStart = currentRangeStart
+      maxRangeEnd = i
+    }
+
+    if (currentProfit < 0) {
+      currentProfit = 0
+      currentRangeStart = i + 1
+    }
+  }
+
+  if (maxRangeEnd < maxRangeStart) {
+    return []
+  }
+  return [maxRangeStart, maxRangeEnd]
+}
+
 /**
  * The maxProfitRange() function takes an array of monthly profits as its input and returns an array with the starting 
  * and ending month of the range with maximum profit.
@@ -72,5 +100,8 @@ The findMaxProfitEndMonth() function takes the monthly profits array and the sta
 // )
 
 const monthlyProfits = [5, -3, 4, 8, 6, -7, 2]
-const result = maxProfitRange(monthlyProfits)
+const result = maxProfitRange2(monthlyProfits)
 console.log(result)
+
+console.log(maxProfitRange2([-1, -2, -3, -4, -5]))
+console.log(maxProfitRange2([0, 0, 0, 2]))
