@@ -38,4 +38,4 @@ function findDuplicate(nums) {
   }
 }
 
-console.log(findDuplicate([1, 2, 3, 4, 7, 7, 7]))
+console.log(findDuplicate([1, 2, 3, 4, 3, 3]))

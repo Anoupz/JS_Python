@@ -22,4 +22,4 @@ def binary_search_rotated(nums, target):
     return target_index
 
 
-print(binary_search_rotated([4, 5, 6, 7, 0, 1, 2], 7))
+print(binary_search_rotated([4, 5, 6, 7, 0, 1, 2], 0))

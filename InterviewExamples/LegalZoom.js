@@ -4,51 +4,7 @@
  * you can use a sliding window approach with a variable to keep track of the maximum profit and
  * another variable to keep track of the starting month of the range with maximum profit.
  */
-
 function maxProfitRange(monthlyProfits) {
-  let maxProfit = -Infinity
-  let maxProfitStartMonth = 0
-  let currentProfit = 0
-  let currentStartMonth = 0
-
-  for (let i = 0; i < monthlyProfits.length; i++) {
-    currentProfit += monthlyProfits[i]
-
-    if (currentProfit > maxProfit) {
-      maxProfit = currentProfit
-      maxProfitStartMonth = currentStartMonth
-    }
-
-    if (currentProfit < 0) {
-      currentProfit = 0
-      currentStartMonth = i + 1
-    }
-  }
-
-  return [
-    maxProfitStartMonth,
-    findMaxProfitEndMonth(monthlyProfits, maxProfitStartMonth),
-  ]
-}
-
-function findMaxProfitEndMonth(monthlyProfits, startMonth) {
-  let endMonth = startMonth
-  let maxProfit = 0
-  let currentProfit = 0
-
-  for (let i = startMonth; i < monthlyProfits.length; i++) {
-    currentProfit += monthlyProfits[i]
-
-    if (currentProfit > maxProfit) {
-      maxProfit = currentProfit
-      endMonth = i
-    }
-  }
-
-  return endMonth
-}
-
-function maxProfitRange2(monthlyProfits) {
   let maxProfit = 0
   let maxRangeStart = 0
   let maxRangeEnd = -1
@@ -100,8 +56,8 @@ The findMaxProfitEndMonth() function takes the monthly profits array and the sta
 // )
 
 const monthlyProfits = [5, -3, 4, 8, 6, -7, 2]
-const result = maxProfitRange2(monthlyProfits)
+const result = maxProfitRange(monthlyProfits)
 console.log(result)
 
-console.log(maxProfitRange2([-1, -2, -3, -4, -5]))
-console.log(maxProfitRange2([0, 0, 0, 2]))
+console.log(maxProfitRange([-1, -2, -3, -4, -5]))
+console.log(maxProfitRange([0, 0, 0, 2]))

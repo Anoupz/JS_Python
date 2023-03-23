@@ -37,4 +37,4 @@ function topKFrequent(nums, k) {
   return result
 }
 
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2))
+console.log(topKFrequent([1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3], 2))
