@@ -1,4 +1,4 @@
-const permissionMappedRoles: Record<string, any> = new Map([
+const permissionMappedRoles = new Map([
   [
     'weather_viewer',
     {
@@ -31,7 +31,7 @@ const user_info = new Map([
   ['john', new Set(['some_random_role'])],
 ])
 
-const hasPermission: (user: string, permission: string) => boolean = (
+const hasPermission = (
   user,
   permission
 ) => {
@@ -49,7 +49,7 @@ const hasPermission: (user: string, permission: string) => boolean = (
   return result.has(permission)
 }
 
-function getPermittedRoles(permittedResources: any, roles: any) {
+function getPermittedRoles(permittedResources, roles) {
   for (let role of roles) {
     const { permissions, associatedRoles } = permissionMappedRoles.get(role)
     permittedResources.add(...Array.from(permissions))
