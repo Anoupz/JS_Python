@@ -6,7 +6,7 @@ const columns = ['name', 'population', 'climate', 'terrain']
 
 export const DataGrid = () => {
   const [pageInfo, setPageInfo] = useState({
-    loading: false,
+    loading: true,
     count: 0,
     results: null,
     next: null,
