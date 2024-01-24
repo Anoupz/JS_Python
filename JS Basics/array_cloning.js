@@ -49,3 +49,9 @@ console.log(
   '--->> Clone the array with JSON.parse',
   JSON.parse(JSON.stringify(a))
 )
+
+// Deep cloning
+// Deep cloning is required when we have nested array or object
+// For example
+let deepCloning = JSON.parse(JSON.stringify(a))
+console.log('--->> Deep cloning', deepCloning)

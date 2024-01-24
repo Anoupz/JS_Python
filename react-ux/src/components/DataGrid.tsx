@@ -30,7 +30,7 @@ export const DataGrid = () => {
 
   useEffect(() => {
     fetchData('https://swapi.dev/api/planets/')
-  }, [])
+  }, [fetchData])
 
   const onHandleNext = () => {
     if (pageInfo.next === null) {
